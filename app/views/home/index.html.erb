@@ -56,27 +56,30 @@
             </div>
         </div>
     </section>
-    <section id="portfolio" class="p-0">
-    <div class="container-fluid p-0">
-        <div class="row no-gutters popup-gallery">
-            <div class="col-sm-6 col-lg-4"><a class="portfolio-box" href="fullsize/1.jpg"><img class="img-fluid" src="thumbnails/1.jpg" /><div class="portfolio-box-caption"><div class="portfolio-box-caption-content"><div class="project-category text-faded"><span>Category</span></div><div class="project-name"><span>Project Name</span></div></div></div></a></div>
-            <div
-                class="col-sm-6 col-lg-4"><a class="portfolio-box" href="fullsize/2.jpg"><img class="img-fluid" src="thumbnails/2.jpg" /><div class="portfolio-box-caption"><div class="portfolio-box-caption-content"><div class="project-category text-faded"><span>Category</span></div><div class="project-name"><span>Project Name</span></div></div></div></a></div>
-        <div
-            class="col-sm-6 col-lg-4"><a class="portfolio-box" href="fullsize/3.jpg"><img class="img-fluid" src="thumbnails/3.jpg" /><div class="portfolio-box-caption"><div class="portfolio-box-caption-content"><div class="project-category text-faded"><span>Category</span></div><div class="project-name"><span>Project Name</span></div></div></div></a></div>
-    <div
-        class="col-sm-6 col-lg-4"><a class="portfolio-box" href="fullsize/4.jpg"><img class="img-fluid" src="thumbnails/4.jpg" /><div class="portfolio-box-caption"><div class="portfolio-box-caption-content"><div class="project-category text-faded"><span>Category</span></div><div class="project-name"><span>Project Name</span></div></div></div></a></div>
-        <div
-            class="col-sm-6 col-lg-4"><a class="portfolio-box" href="fullsize/5.jpg"><img class="img-fluid" src="thumbnails/5.jpg" /><div class="portfolio-box-caption"><div class="portfolio-box-caption-content"><div class="project-category text-faded"><span>Category</span></div><div class="project-name"><span>Project Name</span></div></div></div></a></div>
-            <div
-                class="col-sm-6 col-lg-4"><a class="portfolio-box" href="fullsize/6.jpg"><img class="img-fluid" src="thumbnails/6.jpg" /><div class="portfolio-box-caption"><div class="portfolio-box-caption-content"><div class="project-category text-faded"><span>Category</span></div><div class="project-name"><span>Project Name</span></div></div></div></a></div>
-                </div>
-                </div>
-</section>
+   
     <section class="bg-dark text-white">
         <div class="container text-center">
             <h2 class="mb-4">今すぐ初めてみませんか？</h2><a class="btn btn-light btn-xl sr-button" role="button"href="#">アカウントを作成する</a></div>
     </section>
+
+    <div class="modal fade" id="signupModal" tabindex="-1" role="dialog" aria-labelledby="basicModal" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-body">
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span></button>
+                <form method="post">
+                <h2 class="text-center"><strong>新規登録</strong></h2>
+                <div class="form-group"><input type="email" class="form-control" name="email" placeholder="メールアドレス" /></div>
+                <div class="form-group"><input type="name" class="form-control" name="name" placeholder="ニックネーム" /></div>
+                <div class="form-group"><input type="password" class="form-control" name="password" placeholder="パスワード" /></div>
+                <div class="form-group"><input type="password" class="form-control" name="password-repeat" placeholder="パスワード（確認用）" /></div>
+              
+                <div class="form-group"><button class="btn btn-primary btn-block" type="submit">アカウント作成</button></div><a class="already" href="#">既にアカウントをお持ちの場合はこちら</a></form>
+                </div>
+            </div>
+        </div>
+    </div>
+
 
     <%= javascript_include_tag('index.js') %>
 </body>
