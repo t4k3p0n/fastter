@@ -1,0 +1,44 @@
+<h2>Sign up</h2>
+
+<%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+  <%= render "devise/shared/error_messages", resource: resource %>
+
+  <div class="field">
+    <%= f.label :email %><br />
+    <%= f.email_field :email, autofocus: true, autocomplete: "email" ,:class=>"form-control", placeholder: 'メールアドレス'%>
+  </div>
+
+  <div class="field">
+    <%= f.label :password %>
+    <% if @minimum_password_length %>
+    <em>(<%= @minimum_password_length %> characters minimum)</em>
+    <% end %><br />
+    <%= f.password_field :password, autocomplete: "new-password"  ,:class=>"form-control", placeholder: 'パスワード'%>
+  </div>
+
+  <div class="field">
+    <%= f.label :password_confirmation %><br />
+    <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
+  </div>
+ 
+
+
+
+
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-body">
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span></button>
+                <form method="post">
+                <h2 class="text-center"><strong>新規登録</strong></h2>
+                <div class="form-group"><%= f.email_field :email, autofocus: true, autocomplete: "email" ,:class=>"form-control", placeholder: 'メールアドレス'%>
+                <div class="form-group"><%= f.text_field :username, class: "form-control" ,placeholder: 'ユーザーネーム'%>
+                <div class="form-group"><%= f.password_field :password, autocomplete: "new-password"  ,:class=>"form-control", placeholder: 'パスワード'%>
+                <div class="form-group"><%= f.password_field :password_confirmation, autocomplete: "new-password"  ,:class=>"form-control", placeholder: 'パスワード(確認用)'%>
+                <div class="form-group"><%= f.submit "アカウント作成" ,:class=>"btn btn-primary btn-block" %></div><a class="already" href="#">既にアカウントをお持ちの場合はこちら</a></form>
+                </div>
+            </div>
+        </div>
+    </div>
+    <% end %>
+<%= render "devise/shared/links" %>
