@@ -1,9 +1,9 @@
 <nav class="navbar navbar-light navbar-expand-lg fixed-top" id="mainNav" style="background-color: #000000;">
-  <div class="container"><a class="navbar-brand js-scroll-trigger" href="#page-top">Fastter</a><button data-toggle="collapse" data-target="#navbarResponsive" class="navbar-toggler navbar-toggler-right" type="button" aria-controls="navbarResponsive" aria-expanded="false"
+  <div class="container"><a class="navbar-brand js-scroll-trigger" href="/">Fastter</a><button data-toggle="collapse" data-target="#navbarResponsive" class="navbar-toggler navbar-toggler-right" type="button" aria-controls="navbarResponsive" aria-expanded="false"
           aria-label="Toggle navigation"><i class="fa fa-align-justify" style="color: rgb(240,95,64);"></i></button>
       <div class="collapse navbar-collapse" id="navbarResponsive">
           <ul class="nav navbar-nav ml-auto">
-              <li class="nav-item" role="presentation"><a class="nav-link" data-toggle="modal" data-target="#signupModal" href="" style="color:rgba(255,255,255,0.7)">新規登録</a></li>
+              <li class="nav-item" role="presentation"><a class="nav-link" href="/users/sign_up" style="color:rgba(255,255,255,0.7)">新規登録</a></li>
               <li class="nav-item" role="presentation"><a class="nav-link" href="" style="color:rgba(255,255,255,0.7)">ログイン</a></li>
               <li class="nav-item" role="presentation"><a class="nav-link" href="" style="color:rgba(255,255,255,0.7)">皆の投稿</a></li>
               <%= link_to "ログアウト", destroy_user_session_path, method: :delete %>
