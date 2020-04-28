@@ -2,9 +2,9 @@
 <html>
 
 <%= stylesheet_link_tag "home/index", :media => "all" %>
-
 <body id="page-top">
-   
+<%= render 'home/nav' %>
+
     <header class="masthead text-center text-white d-flex" style="background-image: url(<%= asset_path 'header.jpg' %>);">
         <div class="container my-auto">
             <div class="row">
@@ -14,6 +14,7 @@
                 </div>
             </div>
             <div class="col-lg-8 mx-auto">
+            <p></p>
                 <p class="text-faded mb-5" style="color: #ffffff;font-size: 19px;">毎日、どんな服装にしようかで悩んでいませんか？そんな時間勿体ないですよねこのサービスはそんな問題を解決するために作られたサービスです！&nbsp;</p><a class="btn btn-primary btn-xl js-scroll-trigger" role="button" href="#services" style="background-color: rgb(240,75,64);">今すぐ始めてみる</a></div>
         </div>
     </header>
@@ -56,29 +57,15 @@
             </div>
         </div>
     </section>
-    <section id="portfolio" class="p-0">
-    <div class="container-fluid p-0">
-        <div class="row no-gutters popup-gallery">
-            <div class="col-sm-6 col-lg-4"><a class="portfolio-box" href="fullsize/1.jpg"><img class="img-fluid" src="thumbnails/1.jpg" /><div class="portfolio-box-caption"><div class="portfolio-box-caption-content"><div class="project-category text-faded"><span>Category</span></div><div class="project-name"><span>Project Name</span></div></div></div></a></div>
-            <div
-                class="col-sm-6 col-lg-4"><a class="portfolio-box" href="fullsize/2.jpg"><img class="img-fluid" src="thumbnails/2.jpg" /><div class="portfolio-box-caption"><div class="portfolio-box-caption-content"><div class="project-category text-faded"><span>Category</span></div><div class="project-name"><span>Project Name</span></div></div></div></a></div>
-        <div
-            class="col-sm-6 col-lg-4"><a class="portfolio-box" href="fullsize/3.jpg"><img class="img-fluid" src="thumbnails/3.jpg" /><div class="portfolio-box-caption"><div class="portfolio-box-caption-content"><div class="project-category text-faded"><span>Category</span></div><div class="project-name"><span>Project Name</span></div></div></div></a></div>
-    <div
-        class="col-sm-6 col-lg-4"><a class="portfolio-box" href="fullsize/4.jpg"><img class="img-fluid" src="thumbnails/4.jpg" /><div class="portfolio-box-caption"><div class="portfolio-box-caption-content"><div class="project-category text-faded"><span>Category</span></div><div class="project-name"><span>Project Name</span></div></div></div></a></div>
-        <div
-            class="col-sm-6 col-lg-4"><a class="portfolio-box" href="fullsize/5.jpg"><img class="img-fluid" src="thumbnails/5.jpg" /><div class="portfolio-box-caption"><div class="portfolio-box-caption-content"><div class="project-category text-faded"><span>Category</span></div><div class="project-name"><span>Project Name</span></div></div></div></a></div>
-            <div
-                class="col-sm-6 col-lg-4"><a class="portfolio-box" href="fullsize/6.jpg"><img class="img-fluid" src="thumbnails/6.jpg" /><div class="portfolio-box-caption"><div class="portfolio-box-caption-content"><div class="project-category text-faded"><span>Category</span></div><div class="project-name"><span>Project Name</span></div></div></div></a></div>
-                </div>
-                </div>
-</section>
+   
     <section class="bg-dark text-white">
         <div class="container text-center">
             <h2 class="mb-4">今すぐ初めてみませんか？</h2><a class="btn btn-light btn-xl sr-button" role="button"href="#">アカウントを作成する</a></div>
     </section>
 
-    <%= javascript_include_tag('index.js') %>
+
+<%= javascript_include_tag('index.js') %>
 </body>
+
 
 </html>
