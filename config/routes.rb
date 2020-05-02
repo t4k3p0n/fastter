@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
 
+  get 'users/top'
   devise_for :users
   root 'home#index'
 
@@ -8,4 +9,5 @@ Rails.application.routes.draw do
     post 'login', to: 'devise/sessions#create'
     delete 'signout', to: 'devise/sessions#destroy'
   end
+  
 end
