@@ -21,3 +21,4 @@ Rails.application.config.assets.configure do |env|
   end
   Rails.application.config.assets.precompile += %w( home/index )
   Rails.application.config.assets.precompile += %w( index.js )
+  Rails.application.config.assets.precompile += %w( users/index )
