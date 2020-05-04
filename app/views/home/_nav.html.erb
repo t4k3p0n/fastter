@@ -3,10 +3,15 @@
           aria-label="Toggle navigation"><i class="fa fa-align-justify" style="color: rgb(240,95,64);"></i></button>
       <div class="collapse navbar-collapse" id="navbarResponsive">
           <ul class="nav navbar-nav ml-auto">
-              <li class="nav-item" role="presentation"><a class="nav-link" href="/users/sign_up" style="color:rgba(255,255,255,0.7)">新規登録</a></li>
-              <li class="nav-item" role="presentation"><a class="nav-link" href="" style="color:rgba(255,255,255,0.7)">ログイン</a></li>
+              <% if user_signed_in? %>
+              <li class="nav-item" role="presentation"><a class="nav-link" href="/users/sign_up" style="color:rgba(255,255,255,0.7)">設定</a></li>
               <li class="nav-item" role="presentation"><a class="nav-link" href="" style="color:rgba(255,255,255,0.7)">皆の投稿</a></li>
-              <%= link_to "ログアウト", destroy_user_session_path, method: :delete %>
+              <li class="nav-item" role="presentation"> <%= link_to "ログアウト", destroy_user_session_path, method: :delete,class:"nav-link",style:"color:rgba(255,255,255,0.7)" %></li>
+              <% else %>
+                <li class="nav-item" role="presentation"><a class="nav-link" href="/users/sign_up" style="color:rgba(255,255,255,0.7)">新規登録</a></li>
+                <li class="nav-item" role="presentation"><a class="nav-link" href="" style="color:rgba(255,255,255,0.7)">ログイン</a></li>
+                <li class="nav-item" role="presentation"><a class="nav-link" href="" style="color:rgba(255,255,255,0.7)">皆の投稿</a></li>
+                <% end %>
               <li class="nav-item" role="presentation"></li>
           </ul>
       </div>
