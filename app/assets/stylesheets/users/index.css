@@ -54,5 +54,9 @@
     padding: 10px 11px;
     border-radius: 100%;
   }
+
+  ul {
+    list-style: none;
+  }
   
   
