@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
 
   get 'users/top'
+  get 'top/show'
   root 'home#index'
   post '/users/guest_sign_in', to: 'users#new_guest'
   devise_for :users
