@@ -52,6 +52,14 @@ class Users::RegistrationsController < Devise::RegistrationsController
   def update_resource(resource, params)
     resource.update_without_current_password(params)
   end
+
+  def new_guest
+    user = User.find_or_create_by!(email: 'guest@example.com') do |user|
+      user.password = SecureRandom.urlsafe_base64
+    end
+    sign_in user
+  end
+
   # The path used after sign up.
   # def after_sign_up_path_for(resource)
   #   super(resource)
