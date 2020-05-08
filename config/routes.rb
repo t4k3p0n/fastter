@@ -12,4 +12,12 @@ Rails.application.routes.draw do
   end
   resources :users, :only => [:show]
   resources :top, :only => [:index]
+
+  resources :users do
+    member do
+     get :following, :followers
+    end
+  end
+  resources :relationships,       only: [:create, :destroy]
+
 end
