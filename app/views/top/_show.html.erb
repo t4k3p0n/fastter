@@ -1,0 +1,24 @@
+<%= stylesheet_link_tag "home/index", :media => "all" %>
+<%= stylesheet_link_tag "users/index", :media => "all" %>
+
+<%= search_form_for @q, url: top_index_path do |f| %>
+    <%= f.label :"ユーザー検索" %>
+    <%= f.search_field :username_cont %>
+    <%= f.submit %>
+<% end %>
+
+<% if @user.any? %>
+ <% @user.each do |result| %>
+  <ul>
+                      <li>
+                      <% if result.image? %>
+                      <img class="rounded-circle profile-pic" src=<%= result.image %>>
+                      <% else %>
+                      <%= image_tag 'default.png', class: 'rounded-circle profile-pic'%>
+                      <% end %>
+                      <%= link_to result.username, result%>
+                      </li>
+                  </ul>
+
+ <% end %>
+<% end %>
