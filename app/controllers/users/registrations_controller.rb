@@ -44,7 +44,8 @@ class Users::RegistrationsController < Devise::RegistrationsController
   # def configure_sign_up_params
   #   devise_parameter_sanitizer.permit(:sign_up, keys: [:attribute])
   # end
-
+  before_action :check_guest, only: :destroy
+  
   def configure_account_update_params
     devise_parameter_sanitizer.permit(:account_update, keys: [:attribute,:image])
   end
@@ -58,6 +59,12 @@ class Users::RegistrationsController < Devise::RegistrationsController
       user.password = SecureRandom.urlsafe_base64
     end
     sign_in user
+  end
+
+  def check_guest
+    if resource.email == 'guest@example.com'
+      redirect_to root_path
+    end
   end
 
   # The path used after sign up.
