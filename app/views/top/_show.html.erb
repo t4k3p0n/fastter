@@ -4,7 +4,7 @@
 <%= search_form_for @q, url: top_index_path do |f| %>
     <%= f.label :"ユーザー検索" %>
     <%= f.search_field :username_cont %>
-    <%= f.submit %>
+    <%= f.submit%>
 <% end %>
 
 <% if @user.any? %>

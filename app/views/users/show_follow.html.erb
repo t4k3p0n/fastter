@@ -1,9 +1,26 @@
-<% @user.followings.each do |user| %>
-    <table>
-    <tr>
-      <td>  <%= user.username %> </td>
-      <td><%= link_to '詳細', user_path(user) %></td>
-    </tr>
-    
-    </table>
-    <% end %>
+<%= stylesheet_link_tag "home/index", :media => "all" %>
+<%= stylesheet_link_tag "users/index", :media => "all" %>
+<%= render 'home/nav' %>
+<section id="services">
+    <div class="container">
+    <div class="row justify-content-center align-items-center">
+                <div class="col-md-6">
+                    <div class="col-md-12">
+                    <h2 class="text-center"><strong>フォロー一覧</strong></h2>
+                    <% @user.followings.each do |user| %>
+                    <ul>
+                      <li>
+                      <% if user.image? %>
+                      <img class="rounded-circle profile-pic" src=<%= user.image %>>
+                      <% else %>
+                      <%= image_tag 'default.png', class: 'rounded-circle profile-pic'%>
+                      <% end %>
+                      <%= link_to user.username, user%>
+                      </li>
+                  </ul>
+                        <% end %>
+                    </div>
+                </div>
+            </div>
+        </div>
+</section>
