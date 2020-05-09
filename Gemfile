@@ -33,6 +33,7 @@ gem 'devise-i18n-views'
 gem 'carrierwave'
 gem 'fog-aws'
 gem 'rmagick'
+gem 'ransack'
 # Use Redis adapter to run Action Cable in production
 # gem 'redis', '~> 4.0'
 # Use ActiveModel has_secure_password

@@ -44,7 +44,8 @@ class Users::RegistrationsController < Devise::RegistrationsController
   # def configure_sign_up_params
   #   devise_parameter_sanitizer.permit(:sign_up, keys: [:attribute])
   # end
-
+  before_action :check_guest, only: :destroy
+  
   def configure_account_update_params
     devise_parameter_sanitizer.permit(:account_update, keys: [:attribute,:image])
   end
@@ -52,6 +53,20 @@ class Users::RegistrationsController < Devise::RegistrationsController
   def update_resource(resource, params)
     resource.update_without_current_password(params)
   end
+
+  def new_guest
+    user = User.find_or_create_by!(email: 'guest@example.com') do |user|
+      user.password = SecureRandom.urlsafe_base64
+    end
+    sign_in user
+  end
+
+  def check_guest
+    if resource.email == 'guest@example.com'
+      redirect_to root_path
+    end
+  end
+
   # The path used after sign up.
   # def after_sign_up_path_for(resource)
   #   super(resource)
