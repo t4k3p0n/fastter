@@ -1,3 +1,21 @@
 <h1>投稿詳細ページ</h1>
-<h3><%= @post.user.username %></h3>
+<h3><%= @post.user.email %></h3>
 <h3><%= @post.img %></h3>
+
+<h2>コメント一覧</h2>
+<div class="comment-wrapper border-top　mb-10">
+  <p class="mt-5">コメント一覧</p>
+  <% @comments.each do |c| %>
+    <div>
+    <a href="/users/<%= @post.user.id %>"><%= c.user.email %></a>
+    <%= c.content %>
+    <hr>
+  </div>
+<% end %>
+
+<%= form_for [@post, @comment] ,url: comments_path do |f| %>
+    <%= f.text_field :content %>
+    <%= f.hidden_field :post_id, value: @post.id %>
+    <br>
+    <%= f.submit 'コメントする', class: "btn btn-primary" %>
+<% end %>
