@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
 
+  get 'posts/index'
+  get 'posts/show'
   get 'users/top'
   get 'top/show'
   root 'home#index'
