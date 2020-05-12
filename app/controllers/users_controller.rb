@@ -1,5 +1,19 @@
 class UsersController < ApplicationController
 
+  def top
+    @user  = current_user
+    @users = @user.followings
+    @posts = []
+    if @users.present?
+      @users.each do |user|
+        posts = Post.where(user_id: user.id).order(created_at: :desc)
+        #取得したユーザーの投稿一覧を@postsに格納
+        @posts.concat(posts)
+      end
+       #@postsを新しい順に並べたい
+        @posts.sort_by!{|post| post.created_at}
+      end
+end
 
     def new_guest
         user = User.find_or_create_by!(email: 'guest@example.com',username:'ゲスト') do |user|
@@ -25,4 +39,6 @@ class UsersController < ApplicationController
       @users = @user.followers
       render 'show_follower'
     end
+
+    
 end

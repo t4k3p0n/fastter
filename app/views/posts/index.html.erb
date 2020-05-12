@@ -7,6 +7,9 @@
     <%= f.submit %>
   <% end %>
   <hr>
+
+
+
   <h2>投稿一覧</h2>
   <% @posts.each do |post| %>
     <a href="/users/<%= post.user.id %>"><%= post.user.username %></a>
