@@ -15,7 +15,10 @@
     <div>
     <a href="/users/<%= @post.user.id %>"><%= c.user.email %></a>
     <%= c.content %>
+    <% if current_user == c.user %>
     <%= link_to "Delete", comment_path(c), method: :delete, class: 'btn btn-danger btn-sm' %>
+     <% end %>
+   
     <hr>
   </div>
 <% end %>

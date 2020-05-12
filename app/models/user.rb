@@ -25,4 +25,8 @@ class User < ApplicationRecord
         def unfollow!(other_user)
           following_relationships.find_by(following_id: other_user.id).destroy
         end
+
+        def posts
+          return Post.where(user_id: self.id)
+        end
 end
