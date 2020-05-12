@@ -2,6 +2,9 @@
   <h2>投稿する</h2>
   <%= form_for @post do |f| %>
     <%= f.text_field :img %>
+    <%= f.label :画像 %><br />
+    <%= f.file_field :img, class: "image" %>
+    <p><%= f.check_box :remove_img %>画像を削除する</p>
     <%= f.submit %>
   <% end %>
   <hr>
@@ -9,6 +12,7 @@
   <% @posts.each do |post| %>
     <a href="/users/<%= post.user.id %>"><%= post.user.username %></a>
     <p><a href="/posts/<%= post.id %>"><%= post.img %></a></p>
+ 
   <% end %>
 
 <% else %>
