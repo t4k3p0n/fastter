@@ -15,7 +15,7 @@ class ImgUploader < CarrierWave::Uploader::Base
   # デフォルト画像は1200x5000に収まるようリサイズ
   
   # サムネイル画像
-process resize_to_fill: [200, 200]
+process resize_to_fill: [640, 350]
 
   # 許可する画像の拡張子
   def extension_whitelist
