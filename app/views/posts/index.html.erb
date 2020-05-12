@@ -1,23 +1,20 @@
-<% if user_signed_in? %>
-  <h2>投稿する</h2>
-  <%= form_for @post do |f| %>
-    <%= f.label :画像 %>
-    <%= f.file_field :img, class: "image" %>
-    <p><%= f.check_box :remove_img %>画像を削除する</p>
-    <%= f.submit %>
-  <% end %>
-  <hr>
+<%= stylesheet_link_tag "home/index", :media => "all" %>
+<%= stylesheet_link_tag "users/index", :media => "all" %>
 
-
-
-  <h2>投稿一覧</h2>
-  <% @posts.each do |post| %>
-    <a href="/users/<%= post.user.id %>"><%= post.user.username %></a>
-    <p><a href="/posts/<%= post.id %>"><%= post.img %></a></p>
- 
-  <% end %>
-
-<% else %>
-  <%= link_to "ユーザー登録", new_user_registration_path %>
-  <%= link_to "ログイン", new_user_session_path %>
-<% end %>
+<%= render 'home/nav' %>
+  <section id="services">
+    <div class="container">
+    <div class="row justify-content-center align-items-center">
+                <div class="col-md-6">
+                    <div class="col-md-12">
+                    <h2 class="text-center"><strong>投稿フォーム</strong></h2>
+                    <%= form_for @post do |f| %>
+                      <%= f.file_field :img, id: :img %>
+                      <p><%= f.check_box :remove_img %>画像を削除する</p>
+                      <%= f.submit %>
+                    <% end %>
+                    </div>
+                </div>
+            </div>
+        </div>
+</section>

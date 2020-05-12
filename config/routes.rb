@@ -1,7 +1,9 @@
 Rails.application.routes.draw do
 
   get 'posts/index'
+  get 'posts/allpost'
   get 'posts/show'
+
   get 'users/top'
   get 'top/show'
 

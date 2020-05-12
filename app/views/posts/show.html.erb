@@ -1,8 +1,17 @@
-<h1>投稿詳細ページ</h1>
+<%= stylesheet_link_tag "home/index", :media => "all" %>
+<%= stylesheet_link_tag "users/index", :media => "all" %>
 
-<h3><%= @post.user.email %></h3>
-<h3><%= @post.img %></h3>
-<%= image_tag @post.img.url%>
+<%= render 'home/nav' %>
+
+
+
+<section id="services">
+    <div class="container">
+    <div class="row justify-content-center align-items-center">
+                <div class="col-md-6">
+                    <div class="col-md-12">
+                    <h3><%= @post.user.username %>さんの投稿</h3>
+                    <%= image_tag @post.img.url%>
 <%= link_to("/posts/#{@post.id}/destroy",{method:"post"}) do %>
 <% if current_user == @post.user %>
 <button type="button" class="btn btn-outline-primary">
@@ -11,24 +20,29 @@
 <% end %>
 <% end %>
 
+
 <h2>コメント一覧</h2>
 <div class="comment-wrapper border-top　mb-10">
-  <p class="mt-5">コメント一覧</p>
+<div>
   <% @comments.each do |c| %>
-    <div>
-    <a href="/users/<%= @post.user.id %>"><%= c.user.email %></a>
+
+    <a href="/users/<%= c.user.id %>"><%= c.user.username %></a>
     <%= c.content %>
     <% if current_user == c.user %>
     <%= link_to "Delete", comment_path(c), method: :delete, class: 'btn btn-danger btn-sm' %>
      <% end %>
    
-    <hr>
-  </div>
-<% end %>
 
+<% end %>
+</div>
 <%= form_for [@post, @comment] ,url: comments_path do |f| %>
     <%= f.text_field :content %>
     <%= f.hidden_field :post_id, value: @post.id %>
     <br>
     <%= f.submit 'コメントする', class: "btn btn-primary" %>
 <% end %>
+                    </div>
+                </div>
+            </div>
+        </div>
+</section>
