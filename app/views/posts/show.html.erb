@@ -1,11 +1,14 @@
 <h1>投稿詳細ページ</h1>
+
 <h3><%= @post.user.email %></h3>
 <h3><%= @post.img %></h3>
 <%= image_tag @post.img.url%>
 <%= link_to("/posts/#{@post.id}/destroy",{method:"post"}) do %>
+<% if current_user == @post.user %>
 <button type="button" class="btn btn-outline-primary">
   <span class="glyphicon glyphicon-trash" aria-hidden="true"></span> 削除
 </button>
+<% end %>
 <% end %>
 
 <h2>コメント一覧</h2>
