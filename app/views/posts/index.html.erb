@@ -1,8 +1,7 @@
 <% if user_signed_in? %>
   <h2>投稿する</h2>
   <%= form_for @post do |f| %>
-    <%= f.text_field :img %>
-    <%= f.label :画像 %><br />
+    <%= f.label :画像 %>
     <%= f.file_field :img, class: "image" %>
     <p><%= f.check_box :remove_img %>画像を削除する</p>
     <%= f.submit %>
