@@ -25,8 +25,10 @@ class PostsController < ApplicationController
 
   def destroy
     @post = Post.find_by(id: params[:id])
+    redirect_back(fallback_location: root_path)
     if @post.user_id == current_user.id
     @post.destroy
+
     else
       flash.now[:alert] = '投稿者のみ削除できます'
     end
