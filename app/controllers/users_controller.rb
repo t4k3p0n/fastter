@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-  before_action :authenticate_user!, only: [:show, :following,:followers]
+  before_action :authenticate_user!, only: [:show, :following,:followers,:top]
   def top
     @user  = current_user
     @users = @user.followings
