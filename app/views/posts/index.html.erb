@@ -1,0 +1,20 @@
+<%= stylesheet_link_tag "home/index", :media => "all" %>
+<%= stylesheet_link_tag "users/index", :media => "all" %>
+
+<%= render 'home/nav' %>
+  <section id="services">
+    <div class="container">
+    <div class="row justify-content-center align-items-center">
+                <div class="col-md-6">
+                    <div class="col-md-12">
+                    <h2 class="text-center"><strong>投稿フォーム</strong></h2>
+                    <%= form_for @post do |f| %>
+                      <%= f.file_field :img, id: :img %>
+                      <p><%= f.check_box :remove_img %>画像を削除する</p>
+                      <%= f.submit %>
+                    <% end %>
+                    </div>
+                </div>
+            </div>
+        </div>
+</section>
