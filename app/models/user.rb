@@ -4,6 +4,7 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
          validates_presence_of :username
+         
          mount_uploader :image, ImageUploader
          
          has_many :following_relationships, foreign_key: "follower_id", class_name: "Relationship", dependent: :destroy
@@ -14,6 +15,8 @@ class User < ApplicationRecord
          has_many :comments
          has_many :posts, foreign_key: :user_id, dependent: :destroy
          has_many :participations, foreign_key: :user_id, dependent: :destroy
+         has_many :likes, dependent: :destroy
+         has_many :liked_posts, through: :likes, source: :post
         def following?(other_user)
           following_relationships.find_by(following_id: other_user.id)
         end
