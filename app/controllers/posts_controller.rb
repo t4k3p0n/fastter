@@ -7,10 +7,13 @@ class PostsController < ApplicationController
 
   def allpost
     @posts = Post.all
+
+    @post_ranking = Post.find(Like.group(:post_id).order('count(post_id) desc').limit(3).pluck(:post_id))
   end
 
   def show
     @post = Post.find(params[:id])
+    @like = Like.new
     @comments = @post.comments
     @comment = Comment.new
     @comments = @post.comments.includes(:user)

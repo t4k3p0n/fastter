@@ -18,11 +18,12 @@ Rails.application.routes.draw do
     delete 'signout', to: 'devise/sessions#destroy'
   resources :users, :only => [:show]
   resources :top, :only => [:index]
-  resources :posts, only: [:index, :show, :create]
   resources :relationships,only: [:create, :destroy]
   resources :comments, only: [:create,:destroy]
   end
-
+  resources :posts, only: [:index, :show, :create] do
+    resources :likes, only: [:create, :destroy]
+  end
   
   resources :users do
     member do
