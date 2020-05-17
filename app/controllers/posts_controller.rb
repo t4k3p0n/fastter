@@ -6,9 +6,9 @@ class PostsController < ApplicationController
   end
 
   def allpost
-    @posts = Post.all
-
+    @posts = Post.all.page(params[:page]).per(6)
     @post_ranking = Post.find(Like.group(:post_id).order('count(post_id) desc').limit(3).pluck(:post_id))
+  
   end
 
   def show
