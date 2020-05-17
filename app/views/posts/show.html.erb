@@ -10,8 +10,10 @@
     <div class="row justify-content-center align-items-center">
                 <div class="col-md-6">
                     <div class="col-md-12">
+                    <%= @post.cat %>
                     <h3><%= @post.user.username %>さんの投稿</h3>
                     <%= image_tag @post.img.url%>
+
 <%= link_to("/posts/#{@post.id}/destroy",{method:"post"}) do %>
 <% if current_user == @post.user %>
 <button type="button" class="btn btn-outline-primary">
