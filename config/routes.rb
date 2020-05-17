@@ -18,6 +18,7 @@ Rails.application.routes.draw do
     delete 'signout', to: 'devise/sessions#destroy'
   resources :users, :only => [:show]
   resources :top, :only => [:index]
+  resources :notifications, :only => [:index]
   resources :relationships,only: [:create, :destroy]
   resources :comments, only: [:create,:destroy]
   end
