@@ -35,6 +35,7 @@ gem 'fog-aws'
 gem 'rmagick'
 gem 'ransack'
 gem 'kaminari'
+gem 'nokogiri'
 # Use Redis adapter to run Action Cable in production
 # gem 'redis', '~> 4.0'
 # Use ActiveModel has_secure_password
