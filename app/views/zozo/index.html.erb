@@ -2,8 +2,9 @@
 <p>
 
 
-  <% @hoge.each do |hogehoge1| %>
-    <%= image_tag hogehoge1 %>
+  <% @hoge.zip(@hoge1) do |hoge,hoge1| %>
+    <%= image_tag hoge %>
+    <%= hoge1 %>
   <% end %>
 
 </p>

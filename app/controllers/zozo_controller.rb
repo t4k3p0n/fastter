@@ -19,7 +19,7 @@ class ZozoController < ApplicationController
 
             
             @hoge2 = doc.xpath('//div[@class="catalog-header-h"]')
-            @hoge1 = doc.xpath('//div[@class="catalog-property"]')
+            @hoge1 = doc.xpath('//img[@class="catalog-img loader"]').map {|alt| alt.attr('alt') }
             # 人気アイテム表示
             @hoge = doc.xpath('//img[@class="catalog-img loader"]').map {|img| img.attr('src') }
              # urlの取得
