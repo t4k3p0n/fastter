@@ -1,0 +1,2 @@
+module ZozoHelper
+end

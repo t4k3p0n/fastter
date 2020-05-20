@@ -7,6 +7,9 @@ Rails.application.routes.draw do
   get 'users/top'
   get 'top/show'
 
+  get 'zozo/index'
+  get 'zozo/woindex'
+
   root 'home#index'
 
   post '/users/guest_sign_in', to: 'users#new_guest'
