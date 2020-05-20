@@ -8,6 +8,7 @@ Rails.application.routes.draw do
   get 'top/show'
 
   get 'zozo/index'
+  get 'zozo/woindex'
 
   root 'home#index'
 
