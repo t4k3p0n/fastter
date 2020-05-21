@@ -1,3 +1,15 @@
-// Place all the styles related to the zozo controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+.btn:focus, .btn:active, button:focus, button:active {
+    outline: none !important;
+    box-shadow: none !important;
+  }
+  
+  #image-gallery .modal-footer{
+    display: block;
+  }
+  
+ 
+img {
+    width: 250px;
+    height: 250px;
+    object-fit: cover; 
+  }

@@ -1,10 +1,34 @@
-<h3>レディース　流行りのアイテム</h3>
-<p>
+<%= stylesheet_link_tag "home/index", :media => "all" %>
+<%= stylesheet_link_tag "users/index", :media => "all" %>
+<%= stylesheet_link_tag "zozo", :media => "all" %>
+<%= render 'home/nav' %>
 
+<section id="services">
+<div class="jumbotron text-center" style="margin-bottom:0; background-color: #FBFCFF;">
+	  <div class="container">
+	  	<div class="row">
+	  		<div class="col-sm-12">
+                  <h1>レディース　人気アイテム</h1>
+                  <a href="/zozo/index">男性の方はこちら</a>
+	  			<hr class="my-4">
+	  			<div align="center">
+						<div class="row">
+                            <div class="row">
+                            <% @hoge.zip(@hoge1) do |hoge,hoge1| %>
+					            <div class="col-lg-3 col-md-4 col-xs-6 thumb">
+                            
+                                <%= image_tag hoge %>
+                                <%= hoge1 %>
+                                    
+					            </div>
+                                <% end %>
+					        </div>
 
-  <% @hoge.zip(@hoge1) do |hoge,hoge1| %>
-    <%= image_tag hoge %>
-    <%= hoge1 %>
-  <% end %>
-
-</p>
+				
+						</div>
+					</div>
+		    </div>
+		  </div>
+		</div>
+    </div>
+    </section>
