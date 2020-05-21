@@ -36,6 +36,7 @@ gem 'rmagick'
 gem 'ransack'
 gem 'kaminari'
 gem 'nokogiri'
+gem 'acts-as-taggable-on', :git => 'https://github.com/mbleigh/acts-as-taggable-on'
 # Use Redis adapter to run Action Cable in production
 # gem 'redis', '~> 4.0'
 # Use ActiveModel has_secure_password
