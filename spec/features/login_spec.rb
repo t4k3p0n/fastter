@@ -1,6 +1,10 @@
 require 'rails_helper'
 
 RSpec.feature "Logins", type: :feature do
+  background do
+    # ユーザを作成する
+    User.create!(email: 'foo@example.com',username:'hogehoge', password: '123456',password_confirmation: '123456')
+  end
   scenario 'ログインする' do
     # ログインページを開く
     visit  new_user_session_path
