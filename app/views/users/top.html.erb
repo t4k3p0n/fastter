@@ -1,5 +1,6 @@
 <%= stylesheet_link_tag "home/index", :media => "all" %>
 <%= stylesheet_link_tag "users/index", :media => "all" %>
+<%= stylesheet_link_tag "users", :media => "all" %>
 <%= render 'home/nav' %>
 
 
@@ -15,7 +16,7 @@
 </div>
 
 <div class="container">
-<div class="row">
+
   <div class="col-xs-12 ">
     <nav>
       <div class="nav nav-tabs nav-fill" id="nav-tab" role="tablist">
@@ -27,8 +28,9 @@
     <div class="tab-content py-3 px-3 px-sm-0" id="nav-tabContent">
 
     <div class="tab-pane fade show active" id="nav-timeline" role="tabpanel" aria-labelledby="nav-timeline-tab">
+
       <% @posts.each do |post| %>
-            <a href="/posts/<%= post.id %>">
+            <a class="portfolio-box" href="/posts/<%= post.id %>">
             <%= image_tag post.img.url%>
             </a>
             <% end %>
@@ -36,7 +38,7 @@
 
       <div class="tab-pane fade" id="nav-post" role="tabpanel" aria-labelledby="nav-post-tab">
       <% @user.posts.each do |post| %>
-            <a href="/posts/<%= post.id %>">
+            <a class="portfolio-box" href="/posts/<%= post.id %>">
             <%= image_tag post.img.url%>
             </a>
             <% end %>
@@ -44,17 +46,13 @@
 
       <div class="tab-pane fade" id="nav-like" role="tabpanel" aria-labelledby="nav-like-tab">
       <% @user.liked_posts.each do |post| %>
-        <a href="/posts/<%= post.id %>">
+        <a  class="portfolio-box" href="/posts/<%= post.id %>">
         <%= image_tag post.img.url%>
         </a>
         <% end %>
         </div>
 
  
-    </div>
+
   
-  </div>
-</div>
-</div>
-</div>
 </div>
