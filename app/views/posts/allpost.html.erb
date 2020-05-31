@@ -7,6 +7,18 @@
 <section id="services">
 <div class="container">
 <div class="row">
+<div class="col-lg-12 text-center">
+        <h2 class="section-heading">ランキング</h2>
+        <hr class="my-4">
+    </div>
+
+<% @post_ranking.each do |like| %>
+ <a class="portfolio-box" href="/posts/<%= like.id %>">
+<%= image_tag like.img.url%>
+</a>
+<% end %>
+</div>
+<br>
     <div class="col-lg-12 text-center">
         <h2 class="section-heading">皆の投稿</h2>
         <hr class="my-4">
@@ -35,8 +47,3 @@
 </div>
 
 
-<h2>ranking</h2>
-
-<% @post_ranking.each do |like| %>
-<%= like.img %>
-<% end %>
