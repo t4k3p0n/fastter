@@ -1,7 +1,21 @@
 <div class="notification-view">
-  <%= notification_form(notification) %><span class="moderate-font"><%= " (#{time_ago_in_words(notification.created_at)}前)" %></span>
-  <br>
-  <% if !@comment.nil? %>
-    <p class="notification-comment"><%= @comment.content %></p>
-  <% end %>
+
+
+<table class="table">
+  <thead>
+    <tr>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>  <%= notification_form(notification) %><span class="moderate-font"><%= " (#{time_ago_in_words(notification.created_at)}前)" %></span></td>
+    </tr>
+
+  </tbody>
+</table>
+
+
+<% if !@comment.nil? %>
+  <p class="notification-comment"><%= @comment.content %></p>
+<% end %>
 </div>
