@@ -14,7 +14,6 @@ class ZozoController < ApplicationController
       f.read
     end
 
-
     doc = Nokogiri::HTML.parse(html, nil, charset)
 
     @hoge2 = doc.xpath('//div[@class="catalog-header-h"]')
@@ -36,6 +35,5 @@ class ZozoController < ApplicationController
 
     @hoge1 = doc.xpath('//img[@class="catalog-img loader"]').map { |alt| alt.attr('alt') }
     @hoge = doc.xpath('//img[@class="catalog-img loader"]').map { |img| img.attr('src') }
-
   end
 end

@@ -5,7 +5,7 @@ require 'carrierwave/storage/file'
 require 'carrierwave/storage/fog'
 
 CarrierWave.configure do |config|
-  if Rails.env.production? || Rails.env.development? 
+  if Rails.env.production? || Rails.env.development?
     config.storage :fog
     config.fog_provider = 'fog/aws'
     config.fog_directory = 'fastter'

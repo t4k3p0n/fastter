@@ -25,16 +25,3 @@
 
 # Ignore master key for decrypting credentials and more.
 /config/master.key
-
-# テスト画像無視
-/public/uploads/*
-
-.browserslistrc
-/.env
-babel.config.js
-.ruby-version
-.swp
-Procfile
-
-# .DS_Store無視
-.DS_Store
