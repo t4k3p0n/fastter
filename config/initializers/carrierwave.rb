@@ -8,8 +8,7 @@ CarrierWave.configure do |config|
     config.fog_provider = 'fog/aws'
     config.fog_directory  = 'fastter'
     config.asset_host = 'https://s3.amazonaws.com/fastter'
-    # NOTE: AWS側の設定を変えなくても、この１行の設定でアップロードできた
-    config.fog_public = false # ←コレ
+    config.fog_public = false 
     config.fog_credentials = {
       provider: 'AWS',
       aws_access_key_id: Rails.application.credentials.aws[:access_key_id],
