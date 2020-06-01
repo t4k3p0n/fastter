@@ -2,8 +2,15 @@
 <body id="page-top">
 <%= render 'home/nav' %>
 
-    <header class="masthead text-center text-white d-flex" style="background-image: url(<%= asset_path 'header.jpg' %>);">
-        <div class="container my-auto">
+
+    
+
+
+    <section id="services">
+<div class="container">
+<div class="row">
+<div class="col-lg-12 text-center">
+    <div class="container my-auto">
             <div class="row">
                 <div class="col-lg-10 mx-auto">
                     <h1 class="text-uppercase"><strong>Fastter</strong></h1>
@@ -12,50 +19,46 @@
             </div>
             <div class="col-lg-8 mx-auto">
             <p></p>
-                <p class="text-faded mb-5" style="color: #ffffff;font-size: 19px;">お気に入りの服装をシェアしたり、好みの服装を見つけませんか？&nbsp;</p><a class="btn btn-primary btn-xl js-scroll-trigger" role="button" href="/users/sign_up" style="background-color: rgb(240,75,64);">今すぐ始めてみる</a></div>
+                <p class="text-faded mb-5" style="color: #000000;font-size: 19px;">お気に入りの服装をシェアしたり、好みの服装を見つけませんか？&nbsp;</p></div>
         </div>
-    </header>
+        <h2 class="section-heading">Fastter内で人気の投稿</h2>
+        <hr class="my-4">
+    </div>
 
-    <section id="services">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-12 text-center">
-                    <h2 class="section-heading">Fastterの特徴</h2>
-                    <hr class="my-4">
+<% @post_ranking.each do |like| %>
+ <a class="portfolio-box" href="/posts/<%= like.id %>">
+<%= image_tag like.img.url%>
+</a>
+<% end %>
+</div>
+<br>
+    <div class="col-lg-12 text-center">
+        <h2 class="section-heading">皆の投稿</h2>
+        <hr class="my-4">
+    </div>
+</div>
+</div>
+<div class="container-fluid p-0 jscroll">
+<div class="row no-gutters popup-gallery">
+<% @posts.each do |post| %>
+<div class="col-sm-6 col-lg-4">
+    <a class="portfolio-box" href="/posts/<%= post.id %>">
+    <%= image_tag post.img.url%>
+        <div class="portfolio-box-caption">
+            <div class="portfolio-box-caption-content">
+                <div class="project-category text-faded">
+                <span>ユーザーネーム</span>
+                </div>
+                <div class="project-name">
+                <span><%= post.user.username %></span>
                 </div>
             </div>
-        </div>
-        <div class="container">
-            <div class="row">
-                <div class="col-md-6 col-lg-3 text-center">
-                    <div class="mx-auto service-box mt-5"><i class="fa fa-check-circle fa-4x text-primary mb-3 sr-icons"></i>
-                        <h3 class="mb-3">コーデ保存機能</h3>
-                        <p class="text-muted mb-0">撮影してそれをアップロードすればコーデを保存できます。</p>
-                    </div>
-                </div>
-                <div class="col-md-6 col-lg-3 text-center">
-                    <div class="mx-auto service-box mt-5"><i class="fa fa-paper-plane fa-4x text-primary mb-3 sr-icons"></i>
-                        <h3 class="mb-3">シェア機能</h3>
-                        <p class="text-muted mb-0">シェア機能をつけることで、色んな人の服装を参考にすることができます。</p>
-                    </div>
-                </div>
-                <div class="col-md-6 col-lg-3 text-center">
-                <div class="mx-auto service-box mt-5"><i class="fa fa-heart fa-4x text-primary mb-3 sr-icons"></i>
-                    <h3 class="mb-3">いいね機能</h3>
-                    <p class="text-muted mb-0">いいねをすることで、お気に入りを登録できます。</p>
-                </div>
-            </div>
-                <div class="col-md-6 col-lg-3 text-center">
-                    <div class="mx-auto service-box mt-5"><i class="fa fa-user fa-4x text-primary mb-3 sr-icons"></i>
-                        <h3 class="mb-3">ランキング機能</h3>
-                        <p class="text-muted mb-0">いいねの数によってランキングを表示するので人気の服装が把握できます。</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-   
-<%= javascript_include_tag('index.js') %>
+            </div></a></div>
+    <% end %>
+    <%= paginate @posts %>
+    </div>
+</div>
+
 </body>
 
 
