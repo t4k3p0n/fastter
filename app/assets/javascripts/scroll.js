@@ -19,7 +19,7 @@
             debug: false,
             autoTrigger: true,
             autoTriggerUntil: false,
-            loadingHtml: '<small>Loading...</small>',
+            loadingHtml: '<div class="d-flex justify-content-center"><div class="spinner-border" role="status"><span class="sr-only">Loading...</span></div></div>',
             loadingFunction: false,
             padding: 0,
             nextSelector: 'a:last',
