@@ -1,11 +1,12 @@
+# frozen_string_literal: true
+
 require 'rails_helper'
 
-RSpec.feature "SignUps", type: :feature do
-  
+RSpec.feature 'SignUps', type: :feature do
   scenario 'ログインする' do
     # 新規登録ページを開く
     visit  new_user_registration_path
-    #フォームにemail,username,passwordを入力する
+    # フォームにemail,username,passwordを入力する
     fill_in 'user_email', with: 'foo@example.com'
     fill_in 'user_username', with: 'hogehoge'
     fill_in 'user_password', with: '123456'

@@ -1,7 +1,9 @@
+# frozen_string_literal: true
+
 FactoryBot.define do
-  factory :user do #factory :testuser, class: User do のようにクラスを明示すればモデル名以外のデータも作れます。
-    username { "test" }
+  factory :user do
+    username { 'test' }
     sequence(:email) { |n| "TEST#{n}@example.com" }
-    password { "testuser" }
+    password { 'testuser' }
   end
 end
