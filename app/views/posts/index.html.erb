@@ -6,16 +6,25 @@
     <div class="container">
     <div class="row justify-content-center align-items-center">
                 <div class="col-md-6">
-                    <div class="col-md-12">
+
                     <h2 class="text-center"><strong>投稿フォーム</strong></h2>
-                    <%= form_for @post do |f| %>
-                      <%= f.file_field :img, id: :img %>
-                      <%= f.text_field :cat, id: :cat %>
-                      <p><%= f.check_box :remove_img %>画像を削除する</p>
-                      <%= f.submit %>
+                    <% if flash[:notice] %>
+                    <div class="alert alert-primary" role="alert"><%= flash[:notice] %></div>
                     <% end %>
+                    <div class="file-upload">
+                    <%= form_for  @post do |f| %>
+                      <%= f.file_field :img, id: :img,class:"file-upload-btn"%>
+                      <%= f.text_field :cat, id: :cat %>
+                      <div class="drag-text">
+                      <h3></h3>
+                    </div>
+                      <%= f.submit class:"file-upload-btn" %>
+                    <% end %>
+
                     </div>
                 </div>
             </div>
         </div>
-</section>
+        </section>
+
+   

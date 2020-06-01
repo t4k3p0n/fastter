@@ -1,11 +1,7 @@
 class ImageUploader < CarrierWave::Uploader::Base
   include CarrierWave::RMagick
  
-  if Rails.env.production? || Rails.env.staging?
-    storage :fog
-  else
-    storage :file
-  end
+  storage :fog
  
   # S3のディレクトリ名
   def store_dir
@@ -36,7 +32,4 @@ class ImageUploader < CarrierWave::Uploader::Base
      model.instance_variable_get(var) or model.instance_variable_set(var, SecureRandom.uuid)
   end
  
-  def default_url(*args)
-    "/images/" + [images, "default.png"].compact.join('_')
-    end
 end

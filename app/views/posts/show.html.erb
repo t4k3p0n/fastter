@@ -1,61 +1,85 @@
 <%= stylesheet_link_tag "home/index", :media => "all" %>
-<%= stylesheet_link_tag "users/index", :media => "all" %>
+
 
 <%= render 'home/nav' %>
 
 
 
 <section id="services">
-    <div class="container">
-    <div class="row justify-content-center align-items-center">
-                <div class="col-md-6">
-                    <div class="col-md-12">
-                    <h3><%= @post.user.username %>さんの投稿</h3>
-                    <%= image_tag @post.img.url%>
-
-<%= link_to("/posts/#{@post.id}/destroy",{method:"post"}) do %>
+  
+    <div class="article-dual-column">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-10 offset-md-1">
+                    <div class="intro">
+                        <h1 class="text-center"><%= @post.user.username %>さんの投稿</h1>
+                        <% if current_user.already_liked?(@post) %>
+  <%= button_to  post_like_path(@post),:class => 'rounded-circle',:method => :delete do %>
+  <i class="fa fa-heart" style="font-size: 24px;color:#ff0000" ></i>
+<% end %>
+<% else %>
+  <%= button_to  post_likes_path(@post),:class => 'rounded-circle' do %>
+  <i class="fa fa-heart" style="font-size: 24px;"></i>
+<% end %>
+<% end %>
+                        <p class="text-center"><span class="by"></span><a  style="font-size: 22px;"><i class="fa fa-heart" style="font-size: 23px;">いいね数：<%= @post.likes.count %></i></a> 
+                        </p><%= image_tag @post.img.url%>
+                        
+                        <%= link_to("/posts/#{@post.id}/destroy",{method:"post"}) do %>
 <% if current_user == @post.user %>
 <button type="button" class="btn btn-outline-primary">
-  <span class="glyphicon glyphicon-trash" aria-hidden="true"></span> 削除
+  <span class="glyphicon glyphicon-trash" aria-hidden="true"></span>削除
 </button>
 <% end %>
 <% end %>
 
-<h3>いいね件数: <%= @post.likes.count %></h3>
-<% if current_user.already_liked?(@post) %>
-  <%= button_to 'いいねを取り消す', post_like_path(@post), method: :delete %>
-<% else %>
-  <%= button_to 'いいね', post_likes_path(@post) %>
-<% end %>
-<h2>いいねしたユーザー</h2>
-<% @post.liked_users.each do |user| %>
-  <li><%= user.username %></a></li>
-<% end %>
-
-<h2>コメント一覧</h2>
-<div class="comment-wrapper border-top　mb-10">
-<div>
-  <% @comments.each do |c| %>
-
-    <a href="/users/<%= c.user.id %>"><%= c.user.username %></a>
-    <%= c.content %>
-    <% if current_user == c.user %>
-    <%= link_to "Delete", comment_path(c), method: :delete, class: 'btn btn-danger btn-sm' %>
-     <% end %>
+</div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-10 col-lg-3 offset-md-1">
+                    <div class="toc">
+                        <p style="font-size: 24px;">いいねしたユーザー</p>
+                        <ul style="font-size: 21px;">
+                           <% @post.liked_users.each do |user| %>
+                           <li><%= user.username %></li>
+                           <% end %>
+                        </ul>
+                    </div>
+                </div>
+                    
+                    <div class="col-md-10 col-lg-7 offset-md-1 offset-lg-0">
+                    <% @comments.each do |c| %>
+                    <div class="border rounded-0 text">
+                        <h2><a href="/users/<%= c.user.id %>"><%= c.user.username %></a></h2>
+                           <p　style="font-size: 26px;"><%= c.content %></p>
+                        <figure class="figure"> <% if current_user == c.user %>
+    <%= link_to "コメント削除", comment_path(c), method: :delete, class: 'btn btn-danger btn-sm' %></figure>
+                        <p></p>
+                    </div>
+    <% end %>
    
 
 <% end %>
-</div>
+ <div class="card text-white mb-1">
+  <div class="card-header">
 <%= form_for [@post, @comment] ,url: comments_path do |f| %>
-    <%= f.text_field :content %>
+
     <%= f.hidden_field :post_id, value: @post.id %>
-    <br>
-    <%= f.submit 'コメントする', class: "btn btn-primary" %>
-<% end %>
-                    </div>
-                </div>
+
+     
+  </div>
+  <div class="card-body">
+      <div class=" card-text form-group">
+              <%= f.text_field :content,class:"form-control",placeholder:"コメントの入力" %>
+              
+      </div>
+          <%= f.submit 'コメントする', class: "btn btn-primary" %>
+    <% end %>
+  </div>
+</div>
+</div>
             </div>
         </div>
-
-        <a href="https://twitter.com/share?ref_src=twsrc%5Etfw" class="twitter-share-button" data-show-count="false">Tweet</a><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+    </div>
 </section>

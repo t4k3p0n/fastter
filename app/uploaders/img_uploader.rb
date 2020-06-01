@@ -1,11 +1,9 @@
 class ImgUploader < CarrierWave::Uploader::Base
   include CarrierWave::RMagick
  
-  if Rails.env.production? || Rails.env.staging?
+  
     storage :fog
-  else
-    storage :file
-  end
+
  
   # S3のディレクトリ名
   def store_dir

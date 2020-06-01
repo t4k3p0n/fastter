@@ -23,3 +23,5 @@ Rails.application.config.assets.configure do |env|
   Rails.application.config.assets.precompile += %w( index.js )
   Rails.application.config.assets.precompile += %w( users/index )
   Rails.application.config.assets.precompile += %w( zozo.css )
+  Rails.application.config.assets.precompile += %w( users.css )
+  Rails.application.config.assets.precompile += %w( notifications.css )
