@@ -25,10 +25,9 @@ class PostsController < ApplicationController
     @post = Post.new(post_params)
     @post.user_id = current_user.id
     if @post.save
-      flash.now[:notice] = '投稿に成功しました'
       redirect_to('/')
     else
-      flash.now[:notice] = '投稿に失敗しました、ファイルを選択してください'
+      flash.now[:notic] = '投稿に失敗しました、ファイルを選択してください'
       render 'index'
     end
   end

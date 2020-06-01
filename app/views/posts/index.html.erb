@@ -8,8 +8,8 @@
                 <div class="col-md-6">
 
                     <h2 class="text-center"><strong>投稿フォーム</strong></h2>
-                    <% if flash[:notice] %>
-                    <div class="alert alert-primary" role="alert"><%= flash[:notice] %></div>
+                    <% if flash[:notic] %>
+                    <div class="alert alert-primary" role="alert"><%= flash[:notic] %></div>
                     <% end %>
                     <div class="file-upload">
                     <%= form_for  @post do |f| %>
