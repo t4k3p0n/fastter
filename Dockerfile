@@ -11,3 +11,5 @@ RUN apt-get update && apt-get -y install vim
 RUN bundle install
 
 ADD . $APP_ROOT
+
+CMD ["rails", "server", "-b", "0.0.0.0"] 

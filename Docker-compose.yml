@@ -7,7 +7,8 @@ services:
       MYSQL_DATABASE: root
     ports:
       - "3306:3306"
-
+    volumes:
+      - ./tmp/db:/var/lib/mysql/data
   web:
     environment:
       - SPROCKETS_CACHE=/cache
