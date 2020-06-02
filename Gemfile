@@ -31,13 +31,12 @@ gem 'font-awesome-sass', '~> 5.4.1'
 gem 'jbuilder', '~> 2.5'
 gem 'jquery-rails'
 gem 'rails-i18n'
-
 gem 'carrierwave'
 gem 'fog-aws'
 gem 'kaminari'
 gem 'nokogiri'
 gem 'ransack'
-gem 'rmagick'
+gem 'mini_magick'
 # Use Redis adapter to run Action Cable in production
 # gem 'redis', '~> 4.0'
 # Use ActiveModel has_secure_password
