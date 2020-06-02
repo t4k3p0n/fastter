@@ -24,7 +24,7 @@
 * JavaScript
 * jQuery
 
-*ローカル開発環境
+・ローカル開発環境
 
 * Docker 
 * docker-compose 
