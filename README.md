@@ -1,24 +1,66 @@
-# README
+# Fastter
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+就職活動用のポートフォリオとして制作した自作アプリです。
+お気に入りの服装の写真を投稿出来ます。機能としてはシンプルですが、開発環境にDocker、インフラにheroku、AWS、CircleCIを使用しています。
 
-Things you may want to cover:
 
-* Ruby version
+## https://fastter.herokuapp.com/
 
-* System dependencies
+閲覧の際は、通常のユーザー登録・ログイン機能によるご確認のほか、
+ログインページの「ゲストログイン」ボタンから、テストユーザーアカウントによるご確認もご利用いただけます。
+ただし、テストユーザーはユーザー情報の更新機能に、制限がかけられております。
+本ポートフォリオは、タブレット・スマートフォンからもご覧いただけます。
 
-* Configuration
+## 使用技術
+・バックエンド
+Ruby 
+Rails
+MySQL
 
-* Database creation
+・フロントエンド
 
-* Database initialization
+html
+Sass
+JavaScript
+jQuery
 
-* How to run the test suite
+ローカル開発環境
 
-* Services (job queues, cache servers, search engines, etc.)
+Docker 
+docker-compose 
 
-* Deployment instructions
+CircleCI
+github への push→CI 実行（Rspec,rubocop)
 
-* ...
+AWS
+S3
+
+本番環境
+Heroku(Dockerコンテナ内をデプロイ)
+
+## 実装した機能
+
+ユーザーアカウント作成(devise)
+ゲストログイン
+ユーザーログイン
+マイページ（全ユーザー,フォロー,フォロワー、タイムライン、いいねした投稿、自分の投稿の一覧表示）
+ユーザー詳細表示（投稿一覧や、フォロー・フォロワー数、いいねした投稿などを表示。）
+ユーザー検索機能（ransack）
+ユーザーをフォロー
+
+画像投稿(CarrierWave)
+いいね機能
+皆の投稿閲覧
+いいね数によってランキング
+投稿にコメント
+皆の投稿に無限スクロール(kaminari)(ロード画面)
+
+## 今後について
+タスク
+AWSの各種サービスを使い独自ドメインを取得してAWSにデプロイ。
+またCircleCIによる自動デプロイ(CD)の実装。
+単体テスト、機能テスト、統合テストを充実させる。
+
+今後の目標ですが
+ファッション用SNSに特化した機能等を作ってみたい等とも思っており、
+再度１からUI/UX等が整っておりオリジナリティのあるファッション用のSNSを作成するのが今後やりたいことです。
