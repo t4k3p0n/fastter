@@ -13,47 +13,47 @@
 
 ## 使用技術
 ・バックエンド
-*Ruby 
-*Rails
-*MySQL
+* Ruby 
+* Rails
+* MySQL
 
 ・フロントエンド
 
-*html
-*Sass
-*JavaScript
-*jQuery
+* html
+* Sass
+* JavaScript
+* jQuery
 
 *ローカル開発環境
 
-*Docker 
-*docker-compose 
+* Docker 
+* docker-compose 
 
-*CircleCI
-*github への push→CI 実行（Rspec,rubocop)
+* CircleCI
+* github への push→CI 実行（Rspec,rubocop)
 
-*AWS
-*S3
+* AWS
+* S3
 
-*本番環境
-*Heroku(Dockerコンテナ内をデプロイ)
+* 本番環境
+* Heroku(Dockerコンテナ内をデプロイ)
 
 ## 実装した機能
 
-*ユーザーアカウント作成(devise)
-*ゲストログイン
-*ユーザーログイン
-*マイページ（全ユーザー,フォロー,フォロワー、タイムライン、いいねした投稿、自分の投稿の一覧表示）
-*ユーザー詳細表示（投稿一覧や、フォロー・フォロワー数、いいねした投稿などを表示。）
-*ユーザー検索機能（ransack）
-*ユーザーをフォロー
+* ユーザーアカウント作成(devise)
+* ゲストログイン
+* ユーザーログイン
+* マイページ（全ユーザー,フォロー,フォロワー、タイムライン、いいねした投稿、自分の投稿の一覧表示）
+* ユーザー詳細表示（投稿一覧や、フォロー・フォロワー数、いいねした投稿などを表示。）
+* ユーザー検索機能（ransack）
+* ユーザーをフォロー
 
-*画像投稿(CarrierWave)
-*いいね機能
-*皆の投稿閲覧
-*いいね数によってランキング
-*投稿にコメント
-*皆の投稿に無限スクロール(kaminari)(ロード画面)
+* 画像投稿(CarrierWave)
+* いいね機能
+* 皆の投稿閲覧
+* いいね数によってランキング
+* 投稿にコメント
+* 皆の投稿に無限スクロール(kaminari)(ロード画面)
 
 ## 今後について
 タスク<br>
